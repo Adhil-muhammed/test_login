@@ -28,6 +28,19 @@
   color: #61dafb;
 }
 
+.button-style {
+  background-color: #0000dbc4;
+  color: white;
+  font-weight: 600;
+}
+
+.login-form {
+  width: 403px;
+  background-color: #f1ffff;
+  justify-content: center;
+  padding: 18px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Login } from "./Login";
+import { Stack } from "@mui/material";
+import { useLogin } from "./useLogin";
+import { Home } from "./Home";
 
-function App() {
+import { Route, Routes } from "react-router-dom";
+
+export const App = () => {
+  const { loginData, onChange, onConfirmLogin } = useLogin();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Stack
+      height={"100vh"}
+      display={"flex"}
+      justifyContent={"center"}
+      alignItems={"center"}
+    >
+      <Login
+        loginData={loginData}
+        onChange={onChange}
+        onConfirmLogin={onConfirmLogin}
+      />
+      <Routes>
+        <Route path="/Home" element={<Home />} />
+      </Routes>
+    </Stack>
   );
-}
-
-export default App;
+};
